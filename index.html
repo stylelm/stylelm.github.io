@@ -24,7 +24,7 @@
   <body>
     <div class="container pt-5 mt-5 shadow p-5 mb-5 bg-white rounded">
       <div class="text-center">
-        <h1>Make-A-Voice:</h1><h3>Unified Voice Synthesis With Discrete Representation</h3>
+        <h1>Speech-to-Speech Translation with Discrete-Unit-Based Style Transfer</h1>
         <!-- <p class="lead fw-bold">
           |<a
             href="https://arxiv.org/abs/2302.03540"
@@ -44,22 +44,21 @@
       </div>
       <p>
         <b>Abstract.</b>  
-        Various applications of voice synthesis have been developed independently despite the fact that they generate "voice" as output in common. In addition, the majority of voice synthesis models currently rely on annotated audio data, but it is crucial to scale them to self-supervised datasets in order to effectively capture the wide range of acoustic variations present in human voice, including speaker identity, emotion, and prosody. In this work, we propose Make-A-Voice, a unified framework for synthesizing and manipulating voice signals from discrete representations. Make-A-Voice leverages a "coarse-to-fine" approach to model the human voice, which involves three stages: 1) semantic stage: model high-level transformation between linguistic content and self-supervised semantic tokens, 2) acoustic stage: introduce varying control signals as acoustic conditions for semantic-to-acoustic modeling, and 3) generation stage: synthesize high-fidelity waveforms from acoustic tokens. Make-A-Voice offers notable benefits as a unified voice synthesis framework: 1) Data scalability: the major backbone (i.e., acoustic and generation stage) does not require any annotations, and thus the training data could be scaled up. 2) Controllability and conditioning flexibility: we investigate different conditioning mechanisms and effectively handle three voice synthesis applications, including text-to-speech (TTS), voice conversion (VC), and singing voice synthesis (SVS) by re-synthesizing the discrete voice representations with prompt guidance. Experimental results demonstrate that Make-A-Voice exhibits superior audio quality and style similarity compared with competitive baseline models.
-
+        Direct speech-to-speech translation (S2ST) with discrete self-supervised representations has achieved remarkable accuracy, but is unable to preserve the speaker timbre of the source speech during translation. Meanwhile, the scarcity of high-quality speaker-parallel data poses a challenge for learning style transfer between source and target speech. We propose an S2ST framework with an acoustic language model based on discrete units from a self-supervised model and a neural codec for style transfer. The acoustic language model leverages self-supervised in-context learning, acquiring the ability for style transfer without relying on any speaker-parallel data, thereby overcoming the issue of data scarcity. By using extensive training data, our model achieves zero-shot cross-lingual style transfer on previously unseen source languages. Experiments show that our model generates translated speeches with high fidelity and style similarity.
       </p>
     </div>
 
 <div class="container pt-5 mt-5 shadow p-5 mb-5 bg-white rounded">
-    <h2 id="model-overview" style="text-align: center;">Make-A-Voice Overview</h2>
+    <h2 id="model-overview" style="text-align: center;">Model Overview</h2>
     <div>
     <p><br/></p>
     <p style="text-align: center;">
-        <img src="arch.png" height="200" width="1050" class="img-fluid">
+        <img src="new_arch.png" height="200" width="1050" class="img-fluid">
     </p>
     <p><br/></p>
   </div>
         <p>
-          Make-A-Voice is considered a unified voice synthesis framework with a "coarse-to-fine" design that progressively enhances the modeling of voice signals by injecting desired conditioning information, which is organized in three main stages as illustrated in Figure 1: 1) semantic stage <i>S<sub>1</sub></i>, speech or text inputs are transformed into a sequence of semantic tokens <i>s</i>, 2) acoustic stage <i>S<sub>2</sub></i>, acoustic tokens <i>a</i> with a variety of conditions (speaker, emotion, prosody, and style) are generated autoregressively from the "pseudo" text (i.e., semantic tokens <i>s</i>); 3) generation stage <i>S<sub>3</sub></i>, a unit-based vocoder synthesizes high-fidelity waveforms from compressed acoustic representations.
+          We propose an S2ST approach for style transfer based on discrete representations from a self-supervised speech model and a neural codec. Figure (a) shows the inference pipeline of our method; figure (b) illustrates the self-supervised training process of the acoustic language model of S2.
         </p>
 </div>
 

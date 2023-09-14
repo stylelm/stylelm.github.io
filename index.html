@@ -87,9 +87,376 @@
   </div>
 
   <div class="container pt-5 mt-5 shadow p-5 mb-5 bg-white rounded">
-    <h2 id="model-overview" style="text-align: left;">TO BE UPDATED</h2>
+    <h2 id="tablecontents" style="text-align: left;">Table of Contents</h2>
     <div>
+      <!-- <ul style="list-style: outside none none !important;"> -->
+        <li><a href="#trans_es" class="btn border-white bg-white fw-bold">Translation on Es-En</a></li>
+        <li><a href="#trans_fr" class="btn border-white bg-white fw-bold">Translation on Fr-En</a></li>
+        <li><a href="#vc" class="btn border-white bg-white fw-bold">Voice Conversion Comparison</a></li>
+     <!-- </ul> -->
     </div>
+  </div>
+
+  <div class="container shadow p-5 mb-5 bg-white rounded">
+    <h3>Translation on Es-En<a id="trans_es" /></h3>
+
+    <p style="margin-top: 2em">
+      In this section, we provide results on Es-En translation.
+    </p>
+    <div class="container pt-3 table-responsive">
+      <table class="table table-hover" id="trans_es_table">
+        <thead>
+          <tr>
+            <th style="text-align: center"></th>
+            <th style="text-align: center">Source</th>
+            <th style="text-align: center">CVSS-T target</th>
+            <th style="text-align: center">S2UT</th>
+            <th style="text-align: center">S2UT + ms-vocoder</th>
+            <th style="text-align: center">Ours</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- <tr>
+               <td colspan="4" style="text-align: center">LJSpeech (test set)</td>
+             </tr>
+             <tr height=200px> <td></td> <td></td> <td></td> <td></td> </tr>
+             <tr height=200px> <td></td> <td></td> <td></td> <td></td> </tr>
+             <tr height=200px> <td></td> <td></td> <td></td> <td></td> </tr>
+            -->
+          <!-- <tr>
+               <td colspan="4" style="text-align: center">LibriSpeech (test-clean)</td>
+             </tr> -->
+          <tr height=100px>
+            <td style="text-align: center"><b>Audio</b></td>
+            <td style="text-align: center"></td>
+            <td style="text-align: center"></td>
+            <td style="text-align: center"></td>
+            <td style="text-align: center"></td>
+            <td style="text-align: center"></td>
+          </tr>
+          <tr height=100px>
+            <td style="text-align: center"><b>Ref Text</b></td>
+            <td style="text-align: center">Dependiendo del tipo de material se conserva en la Biblioteca o el Archivo.</td>
+            <td style="text-align: center">depending on the type of material it is kept in the library or in the archive</td>
+            <td style="text-align: center"></td>
+            <td style="text-align: center"></td>
+            <td style="text-align: center"></td>
+          </tr>
+          <tr height=100px>
+            <td style="text-align: center"><b>Asr Result</b></td>
+            <td style="text-align: center"></td>
+            <td style="text-align: center"></td>
+            <td style="text-align: center">depending on the type of material it is preserved in the library or the archive</td>
+            <td style="text-align: center">depending on the type of material it is preserved in the library or the archive</td>
+            <td style="text-align: center">depending on the type of material it is preserved in the library or the archive</td>
+          </tr>
+          <tr height=100px>
+            <td style="text-align: center"><b>Audio</b></td>
+            <td style="text-align: center"></td>
+            <td style="text-align: center"></td>
+            <td style="text-align: center"></td>
+            <td style="text-align: center"></td>
+            <td style="text-align: center"></td>
+          </tr>
+          <tr height=100px>
+            <td style="text-align: center"><b>Ref Text</b></td>
+            <td style="text-align: center">Los ocho números de la revista fueron publicados por Fantasy Publishing Company, Inc.</td>
+            <td style="text-align: center">the eight volumes of the magazine were published by fantasy publishing company inc</td>
+            <td style="text-align: center"></td>
+            <td style="text-align: center"></td>
+            <td style="text-align: center"></td>
+          </tr>
+          <tr height=100px>
+            <td style="text-align: center"><b>Asr Result</b></td>
+            <td style="text-align: center"></td>
+            <td style="text-align: center"></td>
+            <td style="text-align: center">the eight numbers of the magazines were published by fentasy publishing company incorporated</td>
+            <td style="text-align: center">the eight numbers of the magazines were published by fentasy publishing company incorporated</td>
+            <td style="text-align: center">eight numbers of the magazines were published by fantasy publishing company incorporated</td>
+          </tr>
+          <tr height=100px>
+            <td style="text-align: center"><b>Audio</b></td>
+            <td style="text-align: center"></td>
+            <td style="text-align: center"></td>
+            <td style="text-align: center"></td>
+            <td style="text-align: center"></td>
+            <td style="text-align: center"></td>
+          </tr>
+          <tr height=100px>
+            <td style="text-align: center"><b>Ref Text</b></td>
+            <td style="text-align: center">Cantacuceno casó a su hija Helena con el joven emperador para sellar el acuerdo.</td>
+            <td style="text-align: center">kantakouzenos married his daughter helena with the young emperor in order to seal the deal</td>
+            <td style="text-align: center"></td>
+            <td style="text-align: center"></td>
+            <td style="text-align: center"></td>
+          </tr>
+          <tr height=100px>
+            <td style="text-align: center"><b>Asr Result</b></td>
+            <td style="text-align: center"></td>
+            <td style="text-align: center"></td>
+            <td style="text-align: center">canta cosena marry his daughter helena with the young emperor to save the agreement</td>
+            <td style="text-align: center">canto coseno marry his daughter elena with the young emperor to save the agreement</td>
+            <td style="text-align: center">cante poseno marrid his daughter helena with the young emperor to save the agreement</td>
+          </tr>
+          <tr height=100px>
+            <td style="text-align: center"><b>Audio</b></td>
+            <td style="text-align: center"></td>
+            <td style="text-align: center"></td>
+            <td style="text-align: center"></td>
+            <td style="text-align: center"></td>
+            <td style="text-align: center"></td>
+          </tr>
+          <tr height=100px>
+            <td style="text-align: center"><b>Ref Text</b></td>
+            <td style="text-align: center">Lideró una rebelión contra Pierre Nord Alexis y lo sucedió como presidente.</td>
+            <td style="text-align: center">he led a rebellion against pierre nord alexis and succeeded him as president</td>
+            <td style="text-align: center"></td>
+            <td style="text-align: center"></td>
+            <td style="text-align: center"></td>
+          </tr>
+          <tr height=100px>
+            <td style="text-align: center"><b>Asr Result</b></td>
+            <td style="text-align: center"></td>
+            <td style="text-align: center"></td>
+            <td style="text-align: center">he lead a rebellion against pierre nod alexis and succeeded as president</td>
+            <td style="text-align: center">he lead a rebellion against pierre not alexis and succeeded as president</td>
+            <td style="text-align: center">he lead a rebellion against biernad alexis and succeeded as president</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+  <div class="container shadow p-5 mb-5 bg-white rounded">
+    <h3>Translation on Fr-En<a id="trans_fr" /></h3>
+
+    <p style="margin-top: 2em">
+      In this section, we provide results on Fr-En translation.
+    </p>
+    <div class="container pt-3 table-responsive">
+      <table class="table table-hover" id="trans_fr_table">
+        <thead>
+          <tr>
+            <th style="text-align: center"></th>
+            <th style="text-align: center">Source</th>
+            <th style="text-align: center">CVSS-T target</th>
+            <th style="text-align: center">S2UT</th>
+            <th style="text-align: center">S2UT + ms-vocoder</th>
+            <th style="text-align: center">Ours</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- <tr>
+               <td colspan="4" style="text-align: center">LJSpeech (test set)</td>
+             </tr>
+             <tr height=200px> <td></td> <td></td> <td></td> <td></td> </tr>
+             <tr height=200px> <td></td> <td></td> <td></td> <td></td> </tr>
+             <tr height=200px> <td></td> <td></td> <td></td> <td></td> </tr>
+            -->
+          <!-- <tr>
+               <td colspan="4" style="text-align: center">LibriSpeech (test-clean)</td>
+             </tr> -->
+          <tr height=100px>
+            <td style="text-align: center"><b>Audio</b></td>
+            <td style="text-align: center"></td>
+            <td style="text-align: center"></td>
+            <td style="text-align: center"></td>
+            <td style="text-align: center"></td>
+            <td style="text-align: center"></td>
+          </tr>
+          <tr height=100px>
+            <td style="text-align: center"><b>Ref Text</b></td>
+            <td style="text-align: center">Il est situé au sud-est de l'île, à quelques kilomètres de Joao Barrosa.</td>
+            <td style="text-align: center">it is located on the southeast part of the island several kilometers from joao barrosa</td>
+            <td style="text-align: center"></td>
+            <td style="text-align: center"></td>
+            <td style="text-align: center"></td>
+          </tr>
+          <tr height=100px>
+            <td style="text-align: center"><b>Asr Result</b></td>
+            <td style="text-align: center"></td>
+            <td style="text-align: center"></td>
+            <td style="text-align: center">it is located in the southeast of the island wich a few kilometers of gelboros</td>
+            <td style="text-align: center">it is located in the southeast of the island with a few kilometers of jelbros</td>
+            <td style="text-align: center">it is located in the south east of the island with a few kilometers of jal borrows</td>
+          </tr>
+          <tr height=100px>
+            <td style="text-align: center"><b>Audio</b></td>
+            <td style="text-align: center"></td>
+            <td style="text-align: center"></td>
+            <td style="text-align: center"></td>
+            <td style="text-align: center"></td>
+            <td style="text-align: center"></td>
+          </tr>
+          <tr height=100px>
+            <td style="text-align: center"><b>Ref Text</b></td>
+            <td style="text-align: center">Chladni est le fondateur de l'acoustique moderne.</td>
+            <td style="text-align: center">chladni is the founder of modern acoustics</td>
+            <td style="text-align: center"></td>
+            <td style="text-align: center"></td>
+            <td style="text-align: center"></td>
+          </tr>
+          <tr height=100px>
+            <td style="text-align: center"><b>Asr Result</b></td>
+            <td style="text-align: center"></td>
+            <td style="text-align: center"></td>
+            <td style="text-align: center">cadne is the founder of modern acoustics</td>
+            <td style="text-align: center">cadmy is the founder of modern aquistics</td>
+            <td style="text-align: center">cadney is the founder of modern acoustics</td>
+          </tr>
+          <tr height=100px>
+            <td style="text-align: center"><b>Audio</b></td>
+            <td style="text-align: center"></td>
+            <td style="text-align: center"></td>
+            <td style="text-align: center"></td>
+            <td style="text-align: center"></td>
+            <td style="text-align: center"></td>
+          </tr>
+          <tr height=100px>
+            <td style="text-align: center"><b>Ref Text</b></td>
+            <td style="text-align: center">Depuis sa sortie, les expériences avec cet album sont très positives pour le groupe.</td>
+            <td style="text-align: center">since its release the experiences with this album has been very positive for the band</td>
+            <td style="text-align: center"></td>
+            <td style="text-align: center"></td>
+            <td style="text-align: center"></td>
+          </tr>
+          <tr height=100px>
+            <td style="text-align: center"><b>Asr Result</b></td>
+            <td style="text-align: center"></td>
+            <td style="text-align: center"></td>
+            <td style="text-align: center">since its release the experiences with this album are very positive for the band</td>
+            <td style="text-align: center">since its release the experiences with this album are very positive for the band</td>
+            <td style="text-align: center">since this release the experiences with this album are very positive for the band</td>
+          </tr>
+          <tr height=100px>
+            <td style="text-align: center"><b>Audio</b></td>
+            <td style="text-align: center"></td>
+            <td style="text-align: center"></td>
+            <td style="text-align: center"></td>
+            <td style="text-align: center"></td>
+            <td style="text-align: center"></td>
+          </tr>
+          <tr height=100px>
+            <td style="text-align: center"><b>Ref Text</b></td>
+            <td style="text-align: center">Il s’agit donc d’une séquence continue de diminution du déficit nominal.</td>
+            <td style="text-align: center">it is therefore a continuous sequence of decreasing the nominal deficit</td>
+            <td style="text-align: center"></td>
+            <td style="text-align: center"></td>
+            <td style="text-align: center"></td>
+          </tr>
+          <tr height=100px>
+            <td style="text-align: center"><b>Asr Result</b></td>
+            <td style="text-align: center"></td>
+            <td style="text-align: center"></td>
+            <td style="text-align: center">this is a continuous sequence of decrease with a nominal deficit</td>
+            <td style="text-align: center">this is a continuous sequence of decreased with a nominal deficit</td>
+            <td style="text-align: center">this is a continuous sequence of decreased with the nominal deficit</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+  <div class="container shadow p-5 mb-5 bg-white rounded">
+    <h3>Voice Conversion Comparison<a id="vc" /></h3>
+
+    <p style="margin-top: 2em">
+      In this section, we compare our results with other voice conversion systems.
+    </p>
+    <div class="container pt-3 table-responsive">
+      <table class="table table-hover" id="vc_table">
+        <thead>
+          <tr>
+            <th style="text-align: center">Source</th>
+            <th style="text-align: center">CVSS-T Target</th>
+            <th style="text-align: center">NANSY</th>
+            <th style="text-align: center">PPG-VC</th>
+            <th style="text-align: center">YourTTS</th>
+            <th style="text-align: center">Ours</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <!-- <tr>
+               <td colspan="4" style="text-align: center">LJSpeech (test set)</td>
+             </tr>
+             <tr height=200px> <td></td> <td></td> <td></td> <td></td> </tr>
+             <tr height=200px> <td></td> <td></td> <td></td> <td></td> </tr>
+             <tr height=200px> <td></td> <td></td> <td></td> <td></td> </tr>
+            -->
+          <!-- <tr>
+               <td colspan="4" style="text-align: center">LibriSpeech (test-clean)</td>
+             </tr> -->
+          <tr height=100px>
+            <td style="text-align: center"></td>
+            <td style="text-align: center"></td>
+            <td style="text-align: center"></td>
+            <td style="text-align: center"></td>
+            <td style="text-align: center"></td>
+            <td style="text-align: center"></td>
+          </tr>
+          <tr height=100px>
+            <td style="text-align: center"></td>
+            <td style="text-align: center"></td>
+            <td style="text-align: center"></td>
+            <td style="text-align: center"></td>
+            <td style="text-align: center"></td>
+            <td style="text-align: center"></td>
+          </tr>
+          <tr height=100px>
+            <td style="text-align: center"></td>
+            <td style="text-align: center"></td>
+            <td style="text-align: center"></td>
+            <td style="text-align: center"></td>
+            <td style="text-align: center"></td>
+            <td style="text-align: center"></td>
+          </tr>
+          <tr height=100px>
+            <td style="text-align: center"></td>
+            <td style="text-align: center"></td>
+            <td style="text-align: center"></td>
+            <td style="text-align: center"></td>
+            <td style="text-align: center"></td>
+            <td style="text-align: center"></td>
+          </tr>
+          <tr height=100px>
+            <td style="text-align: center"></td>
+            <td style="text-align: center"></td>
+            <td style="text-align: center"></td>
+            <td style="text-align: center"></td>
+            <td style="text-align: center"></td>
+            <td style="text-align: center"></td>
+          </tr>
+          <tr height=100px>
+            <td style="text-align: center"></td>
+            <td style="text-align: center"></td>
+            <td style="text-align: center"></td>
+            <td style="text-align: center"></td>
+            <td style="text-align: center"></td>
+            <td style="text-align: center"></td>
+          </tr>
+          <tr height=100px>
+            <td style="text-align: center"></td>
+            <td style="text-align: center"></td>
+            <td style="text-align: center"></td>
+            <td style="text-align: center"></td>
+            <td style="text-align: center"></td>
+            <td style="text-align: center"></td>
+          </tr>
+          <tr height=100px>
+            <td style="text-align: center"></td>
+            <td style="text-align: center"></td>
+            <td style="text-align: center"></td>
+            <td style="text-align: center"></td>
+            <td style="text-align: center"></td>
+            <td style="text-align: center"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
   </div>
 
 </body>
